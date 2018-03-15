@@ -7,6 +7,6 @@ function pre($list,$exit = true)
 {
     echo "<pre>";
     print_r($list);
-    if($exit)
+    if ($exit)
         die();
 }

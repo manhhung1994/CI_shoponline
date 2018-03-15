@@ -51,15 +51,18 @@
             <ul class="sub">
                 <li >
                     <a href="admin/product.html">
-                        Sản phẩm							</a>
+                        Sản phẩm
+                    </a>
                 </li>
                 <li >
-                    <a href="admin/cat.html">
-                        Danh mục							</a>
+                    <a href="<?php echo admin_url('catalog')?>">
+                        Danh mục
+                    </a>
                 </li>
                 <li >
                     <a href="admin/comment.html">
-                        Phản hồi							</a>
+                        Phản hồi
+                    </a>
                 </li>
             </ul>
 

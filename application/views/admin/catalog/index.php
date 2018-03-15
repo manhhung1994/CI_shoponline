@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/admin/head') ;?>
+<?php $this->load->view('admin/catalog/head') ;?>
 <div class="line"></div>
 
 <!-- Message -->
@@ -10,8 +10,8 @@
 
         <div class="title">
             <span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span>
-            <h6>Danh sách Thành viên</h6>
-            <div class="num f12">Tổng số: <b><?php echo $total?></b></div>
+            <h6>Danh sách danh mục sản phẩm</h6>
+            <div class="num f12">Tổng số: <b><?php echo count($list)?></b></div>
         </div>
 
         <form action="http://localhost/webphp/index.php/admin/user.html" method="get" class="form" name="filter">
@@ -20,8 +20,8 @@
                 <tr>
                     <td style="width:10px;"><img src="<?php echo public_url('admin/')?>images/icons/tableArrows.png" /></td>
                     <td style="width:80px;">Mã số</td>
-                    <td>Tên</td>
-                    <td>Email</td>
+                    <td style="width:80px;">Thứ tự hiển thị</td>
+                    <td>Tên danh mục</td>
                     <td style="width:100px;">Hành động</td>
                 </tr>
                 </thead>
@@ -44,20 +44,20 @@
                 <tbody>
                 <!-- Filter -->
                 <?php foreach ($list as $row):?>
-                <tr>
-                    <td><input type="checkbox" name="id[]" value="<?php echo $row->id?>" /></td>
-                    <td class="textC"><?php echo $row->id?></td>
-                    <td><span title="Hoàng văn Tuyền" class="tipS"><?php echo $row->name?></span></td>
-                    <td><span title="hoangvantuyencnt@gmail.com" class="tipS"><?php echo $row->username?>						</span></td>
-                    <td class="option">
-                        <a href="<?php echo admin_url('admin/edit/'.$row->id)?>" title="Chỉnh sửa" class="tipS ">
-                            <img src="<?php echo public_url('admin/')?>images/icons/color/edit.png" />
-                        </a>
-                        <a href="<?php echo admin_url('admin/delete/'.$row->id)?>" title="Xóa" class="tipS verify_action" >
-                            <img src="<?php echo public_url('admin/')?>images/icons/color/delete.png" />
-                        </a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="<?php echo $row->id?>" /></td>
+                        <td class="textC"><?php echo $row->id?></td>
+                        <td class="textC"><?php echo $row->sort_order?></td>
+                        <td><span title="" class="tipS"><?php echo $row->name?></span></td>
+                        <td class="option">
+                            <a href="<?php echo admin_url('catalog/edit/'.$row->id)?>" title="Chỉnh sửa" class="tipS ">
+                                <img src="<?php echo public_url('admin/')?>images/icons/color/edit.png" />
+                            </a>
+                            <a href="<?php echo admin_url('catalog/delete/'.$row->id)?>" title="Xóa" class="tipS verify_action" >
+                                <img src="<?php echo public_url('admin/')?>images/icons/color/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
                 <?php  endforeach;?>
 
 
