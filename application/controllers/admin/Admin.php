@@ -89,10 +89,11 @@ Class Admin extends  MY_Controller
         $input['order'] = array('id','asc');
         $list = $this->admin_model->get_list($input);
         $this->data['list'] = $list;
-        $this->data['temp'] = 'admin/admin/index';
         $this->data['total'] = $this->admin_model->get_total();
+
         $message = $this->session->flashdata($this->_message);
         $this->data[$this->_message] = $message;
+        $this->data['temp'] = 'admin/admin/index';
 
         $this->load->view('admin/main', $this->data);
         // lay noi dung message

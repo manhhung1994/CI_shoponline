@@ -50,7 +50,7 @@
 
             <ul class="sub">
                 <li >
-                    <a href="admin/product.html">
+                    <a href="<?php echo admin_url('product')?>">
                         Sản phẩm
                     </a>
                 </li>
